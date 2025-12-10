@@ -1,0 +1,151 @@
+<html>
+
+<head>
+    <title>JavaScript</title>
+    <!-- Inline: viết trực tiếp trong thẻ -->
+    <!-- <body>
+    <button id="btnTest" onclick="alert('Hello')">Xin chào</button>
+</body> -->
+
+    <!-- Internal: Viết trực tiếp trong file HTML hiện tại -->
+    <!-- <script>alert('Hello')</script> -->
+
+
+
+    <!-- gán sự kiện -->
+    <!-- 1. sử dụng thuộc tính HTML -->
+    <button onclick="alert('Bạn đã nhấp vào nút')">Nhấn vào đây</button>
+    <!-- 2.sử dụng thuộc tính onEvent -->
+    <button id="myButton">Nhấn vào đây</button>
+    <script>
+        document.getElementById("myButton").onclick = function () {
+            alert('Sự kiện đã được kích hoạt');
+        }
+    </script>
+    <!--3.sử dụng addEventListener  -->
+    <button id="btn">Nhấn vào đây</button>
+    <script>
+        document.getElementById("btn").addEventListener("click", function () {
+            alert('Sự kiện click đã được kích hoạt');
+        });
+    </script>
+
+    <!-- sự kiện chuột -->
+    <button id="mouseBtn">Di chuột vào đây</button>
+    <script>
+        document.getElementById("mouseBtn")
+            .addEventListener("mousemove", function () {
+                alert('Bạn đã di chuột vào nút');
+            });
+    </script>
+
+    <!-- sự kiện bàn phím -->
+    <input type="text" id="inputBox" placeholder="Nhập vào đây">
+    <script>
+        document.getElementById("inputBox")
+            .addEventListener("keydown", function (event) {
+                console.log("Bạn vừa nhấn phím: " + event.key);
+            });
+    </script>
+
+    <!-- sự kiện form -->
+    <form id="myForm">
+        <input type="text" id="name" placeholder="nhập tên">
+        <button type="submit">Gửi</button>
+    </form>
+    <script>
+        document.getElementById("myForm")
+            .addEventListener("submit", function (event) {
+                let name = document.getElementById("name").value;
+                if (name == "") {
+                    alert("Vui lòng nhập tên");
+                    event.preventDefault(); // ngăn chặn gửi form
+                } else {
+                    alert(name);
+                    alert("Form đã được gửi đi");
+                }
+            })
+    </script>
+
+    <!-- window -->
+    <script type="text/JavaScript">
+        // setTimeout(() => {
+        //     console.log("chạy sau 3 giây")
+        // }, 3000);
+        // setInterval(() => {
+        //     console.log("chạy mỗi 2 giây")
+        // }, 2000);
+        // alert("Trang đã tải xong");
+        //confirm("Bạn có muốn rời khỏi trang không?");
+        // let age = prompt("Vui lòng nhập tuổi của bạn:");
+        // console.log("Tuổi của bạn là: " + age);
+     </script>
+
+    <!-- ví dụ 3.10 -->
+    <style>
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+    <!--ví dụ 3.11  -->
+    <style>
+        #container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        img {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+    <!-- ví dụ 3.12 -->
+    <style>
+        #text {
+            color: blue;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <!-- ví dụ 3.10 -->
+    <h1 id="title">Xin chào DOM!</h1>
+    <p class="description">Đây là một đoạn văn có class.</p>
+    <p class="description">Đây là đoạn văn thứ hai có cùng class.</p>
+    <button onclick="changeText()">Thay đổi nội dung</button>
+    <ul id="list">
+        <li>Phần tử 1</li>
+        <li>Phần tử 2</li>
+        <li>Phần tử 3</li>
+    </ul>
+
+    <!-- ví dụ 3.11 -->
+    <div id="container">
+        <img id="image" src="C:\Users\Admin\Pictures\hinhnen.jpg" alt="Hình ảnh ban đầu">
+        <button onclick="replaceElement()">Thay thế hình ảnh</button>
+    </div>
+
+    <!--ví dụ 3.12  -->
+    <p id="text">Đây là đoạn văn bản.</p>
+    <button onclick="getStyle()">Lấy style</button>
+    <button onclick="setStyle()">Gán style</button>
+    <p id="result"></p>
+
+
+    <!-- External: Liên kết với file JS bên ngoài -->
+    <script src="Js/demo.js"></script>
+</body>
+
+
+
+
+</html>

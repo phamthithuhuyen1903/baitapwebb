@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Đăng nhập</title>
+    <script src="js/bai3.1_dangnhap.js"></script>
+    <style>
+        #message {
+            font-weight: bold;
+            display: none;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Đăng nhập</h1>
+    <form>
+        <label>Username</label>
+        <input type="text" id="username">
+        <br><br>
+        <label>Password</label>
+        <input type="password" id="password">
+        <br><br>
+        <input type="button" value="Đăng nhập" onclick="DangNhap()">
+    </form>
+    <div id="message"></div>
+
+</html>
